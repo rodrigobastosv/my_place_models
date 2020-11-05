@@ -11,8 +11,8 @@ class UsuarioModel {
     this.tipo,
   });
 
-  UsuarioModel.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
+  UsuarioModel.fromJson(String userId, Map<String, dynamic> json) {
+    id = userId;
     nome = json['nome'];
     email = json['email'];
     tipo = json['tipo'];
