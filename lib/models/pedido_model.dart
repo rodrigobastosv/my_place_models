@@ -26,6 +26,7 @@ class PedidoModel {
   PedidoModel.fromJson(String docId, Map<String, dynamic> json) {
     id = docId;
     userId = json['userId'];
+    nomeUsuario = json['nomeUsuario'];
     final produtosList = json['produtos'] as List;
     if (produtosList != null && produtosList.isNotEmpty) {
       produtos = List.generate(produtosList.length,
@@ -41,6 +42,7 @@ class PedidoModel {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['userId'] = this.userId;
+    data['nomeUsuario'] = this.nomeUsuario;
     if (produtos != null && produtos.isNotEmpty) {
       final produtosList = List.generate(produtos.length, (i) => produtos[i].toJson());
       data['produtos'] = produtosList;
